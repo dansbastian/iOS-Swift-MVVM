@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		19FA8A1F148DE443E677C907 /* Pods_iOS_Swift_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A094B775CAEA4AD3813FEB /* Pods_iOS_Swift_MVVM.framework */; };
 		4B2D68DE756782AB91EE3671 /* Pods_iOS_Swift_MVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F41B3DEFC8415575EB6D04 /* Pods_iOS_Swift_MVVMUITests.framework */; };
+		6B3B04FA1DA7592600FE413B /* AFApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B04F81DA7592600FE413B /* AFApiClient.swift */; };
+		6B3B04FB1DA7592600FE413B /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B04F91DA7592600FE413B /* Services.swift */; };
+		6B3B04FD1DA75BE500FE413B /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B04FC1DA75BE500FE413B /* MovieData.swift */; };
 		7B0C699E5535D7B44B026E6B /* Pods_iOS_Swift_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE5C997D47CA224BA4C6868 /* Pods_iOS_Swift_MVVMTests.framework */; };
 		BD88C60C1DA3AA8E00D2B7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88C60B1DA3AA8E00D2B7C4 /* AppDelegate.swift */; };
 		BD88C6111DA3AA8E00D2B7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD88C60F1DA3AA8E00D2B7C4 /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		14A094B775CAEA4AD3813FEB /* Pods_iOS_Swift_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Swift_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15378052B3BA66ADD2066377 /* Pods-iOS-Swift-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Swift-MVVMUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Swift-MVVMUITests/Pods-iOS-Swift-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		47F41B3DEFC8415575EB6D04 /* Pods_iOS_Swift_MVVMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Swift_MVVMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B3B04F81DA7592600FE413B /* AFApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFApiClient.swift; sourceTree = "<group>"; };
+		6B3B04F91DA7592600FE413B /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		6B3B04FC1DA75BE500FE413B /* MovieData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		709882B6E39427D5CBB015A5 /* Pods-iOS-Swift-MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Swift-MVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Swift-MVVM/Pods-iOS-Swift-MVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		776B23D3983EC217B2260D6B /* Pods-iOS-Swift-MVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Swift-MVVMTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Swift-MVVMTests/Pods-iOS-Swift-MVVMTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD88C6081DA3AA8E00D2B7C4 /* iOS-Swift-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Swift-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,12 +135,12 @@
 		BD88C5FF1DA3AA8E00D2B7C4 = {
 			isa = PBXGroup;
 			children = (
+				A93EC8F76C8192B7D10FD7F3 /* Frameworks */,
+				1A0445EEC6FC625B74C41023 /* Pods */,
+				BD88C6091DA3AA8E00D2B7C4 /* Products */,
 				BD88C60A1DA3AA8E00D2B7C4 /* iOS-Swift-MVVM */,
 				BD88C61F1DA3AA8E00D2B7C4 /* iOS-Swift-MVVMTests */,
 				BD88C62A1DA3AA8E00D2B7C4 /* iOS-Swift-MVVMUITests */,
-				BD88C6091DA3AA8E00D2B7C4 /* Products */,
-				1A0445EEC6FC625B74C41023 /* Pods */,
-				A93EC8F76C8192B7D10FD7F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,13 +157,13 @@
 		BD88C60A1DA3AA8E00D2B7C4 /* iOS-Swift-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				BD88C63A1DA3AADE00D2B7C4 /* Core */,
+				BD88C64D1DA3AB1900D2B7C4 /* Extension */,
 				BD88C60B1DA3AA8E00D2B7C4 /* AppDelegate.swift */,
 				BD88C6121DA3AA8E00D2B7C4 /* Assets.xcassets */,
 				BD88C6171DA3AA8E00D2B7C4 /* Info.plist */,
 				BD88C6141DA3AA8E00D2B7C4 /* LaunchScreen.storyboard */,
 				BD88C60F1DA3AA8E00D2B7C4 /* Main.storyboard */,
-				BD88C63A1DA3AADE00D2B7C4 /* Core */,
-				BD88C64D1DA3AB1900D2B7C4 /* Extension */,
 			);
 			path = "iOS-Swift-MVVM";
 			sourceTree = "<group>";
@@ -165,8 +171,8 @@
 		BD88C61F1DA3AA8E00D2B7C4 /* iOS-Swift-MVVMTests */ = {
 			isa = PBXGroup;
 			children = (
-				BD88C6201DA3AA8E00D2B7C4 /* iOS_Swift_MVVMTests.swift */,
 				BD88C6221DA3AA8E00D2B7C4 /* Info.plist */,
+				BD88C6201DA3AA8E00D2B7C4 /* iOS_Swift_MVVMTests.swift */,
 			);
 			path = "iOS-Swift-MVVMTests";
 			sourceTree = "<group>";
@@ -174,8 +180,8 @@
 		BD88C62A1DA3AA8E00D2B7C4 /* iOS-Swift-MVVMUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BD88C62B1DA3AA8E00D2B7C4 /* iOS_Swift_MVVMUITests.swift */,
 				BD88C62D1DA3AA8E00D2B7C4 /* Info.plist */,
+				BD88C62B1DA3AA8E00D2B7C4 /* iOS_Swift_MVVMUITests.swift */,
 			);
 			path = "iOS-Swift-MVVMUITests";
 			sourceTree = "<group>";
@@ -183,14 +189,14 @@
 		BD88C63A1DA3AADE00D2B7C4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BD88C6471DA3AB0B00D2B7C4 /* MVVM.png */,
-				BD88C6481DA3AB0B00D2B7C4 /* MVVM.plist */,
 				BD88C63E1DA3AAF600D2B7C4 /* API */,
 				BD88C63C1DA3AAEA00D2B7C4 /* Model */,
 				BD88C63B1DA3AAE300D2B7C4 /* View */,
 				BD88C63D1DA3AAEE00D2B7C4 /* ViewModel */,
+				BD88C6481DA3AB0B00D2B7C4 /* MVVM.plist */,
+				BD88C6471DA3AB0B00D2B7C4 /* MVVM.png */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		BD88C63B1DA3AAE300D2B7C4 /* View */ = {
@@ -200,15 +206,16 @@
 				BD88C6401DA3AB0200D2B7C4 /* GreetingView.xib */,
 				BD88C6411DA3AB0200D2B7C4 /* GreetingViewController.swift */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		BD88C63C1DA3AAEA00D2B7C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				BD88C64B1DA3AB1000D2B7C4 /* Person.swift */,
+				6B3B04FC1DA75BE500FE413B /* MovieData.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BD88C63D1DA3AAEE00D2B7C4 /* ViewModel */ = {
@@ -216,14 +223,16 @@
 			children = (
 				BD88C6451DA3AB0700D2B7C4 /* GreetingViewModel.swift */,
 			);
-			name = ViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BD88C63E1DA3AAF600D2B7C4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				6B3B04F81DA7592600FE413B /* AFApiClient.swift */,
+				6B3B04F91DA7592600FE413B /* Services.swift */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		BD88C64D1DA3AB1900D2B7C4 /* Extension */ = {
@@ -231,7 +240,7 @@
 			children = (
 				BD88C64E1DA3AB2300D2B7C4 /* UIView+Init.swift */,
 			);
-			name = Extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,9 +533,12 @@
 				BD88C64F1DA3AB2300D2B7C4 /* UIView+Init.swift in Sources */,
 				BD88C64C1DA3AB1000D2B7C4 /* Person.swift in Sources */,
 				BD88C60C1DA3AA8E00D2B7C4 /* AppDelegate.swift in Sources */,
+				6B3B04FD1DA75BE500FE413B /* MovieData.swift in Sources */,
 				BD88C6441DA3AB0200D2B7C4 /* GreetingViewController.swift in Sources */,
 				BD88C6421DA3AB0200D2B7C4 /* GreetingView.swift in Sources */,
+				6B3B04FB1DA7592600FE413B /* Services.swift in Sources */,
 				BD88C6461DA3AB0700D2B7C4 /* GreetingViewModel.swift in Sources */,
+				6B3B04FA1DA7592600FE413B /* AFApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +580,7 @@
 				BD88C6101DA3AA8E00D2B7C4 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		BD88C6141DA3AA8E00D2B7C4 /* LaunchScreen.storyboard */ = {
@@ -576,6 +589,7 @@
 				BD88C6151DA3AA8E00D2B7C4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
